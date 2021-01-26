@@ -60,5 +60,3 @@ print(df)
 # copy df
 df_copy = df["first_col"].copy()
 print(df_copy)
-
-
