@@ -1,7 +1,5 @@
-# pandas basic
-
+# pandas grammar
 import pandas as pd
-
 # series (1-dim) vs dataframe (n-dim)
 
 # 1-dim with index
@@ -45,19 +43,22 @@ print(df.loc[0])
 # call specific row by index number
 print(df.iloc[0])
 
+# add new row by loc (1000 = index value)
+df.loc[1000] = ["park", "jinyoung"]
+
 # call specific col by column name
 print(df["first_col"])
 print(df.first_col)
 
+# delete row (axis=0 / default)
+df.drop([0], inplace=True)
 
+# delete row (axis=1)
+df.drop(["second_col"], axis=1, inplace=True)
+print(df)
 
-
-
-
-
-
-
-
-
+# copy df
+df_copy = df["first_col"].copy()
+print(df_copy)
 
 

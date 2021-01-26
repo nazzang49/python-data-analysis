@@ -1,4 +1,4 @@
-# csv = comma-separated value
+# csv = comma separated value
 
 # import pandas as pd
 # df = pd.read_csv("../documents/00_Material(Uploaded)/00_data/USvideos.csv", delimiter=",", encoding="utf-8")
