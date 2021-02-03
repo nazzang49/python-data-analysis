@@ -88,12 +88,20 @@ dic = {"Deaths": 0, "Recovered": 0}
 selected_df = df.fillna(dic)
 print(selected_df.info())
 
+# same as SQL
+df_test = df_test.groupby("Country_Region").sum()
+print(df_test.head())
 
+# change column type to another
+doc = pd.read_csv(path + "01-22-2020.csv", encoding="utf-8-sig")
+doc = doc[["Country/Region", "Confirmed"]]
+doc = doc.dropna(subset=["Confirmed"])
+doc = doc.astype({"Confirmed": "int64"})
+print(doc.info())
+print(doc.head())
 
+doc = doc.duplicated()
+print(doc)
 
-
-
-
-
-
-
+doc = doc.drop_duplicates()
+print(doc)
