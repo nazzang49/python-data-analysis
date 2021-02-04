@@ -21,6 +21,8 @@ def basic_preprocessing(doc: pd.DataFrame):
 
 # preprocessing
 df1 = basic_preprocessing(df1)
+print("============== First df1 ==============")
+print(df1)
 
 # call country info
 country_info = pd.read_csv("../documents/00_Material(Uploaded)/COVID-19-master/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv", encoding="utf-8-sig")
@@ -48,9 +50,21 @@ with open("../documents/00_Material(Uploaded)/COVID-19-master/csse_covid_19_data
     for key in json_data.keys():
         print(json_data[key])
 
+# use apply function
+def country_name(df: pd.DataFrame):
+    # check key-match
+    if df["Country_Region"] in json_data:
+        # convert form key to value
+        df["Country_Region"] = json_data[df["Country_Region"]]
+    return df
 
+df1 = df1.apply(country_name, axis=1)
+print(df1.head())
 
+data = "01-22-2020.csv"
+date_column = data.split(".")[0].lstrip('0').replace('-', '/')
+print(date_column)
 
-
-
-
+# new column name
+df1.columns = ['Province_State', 'Country_Region', date_column]
+print(df1)
