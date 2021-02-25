@@ -35,8 +35,3 @@ print(pd.merge(df1, df2, left_index=True, right_index=True))
 print(pd.merge(df1, df2, left_index=True, right_index=True, how="outer"))
 print(pd.merge(df1, df2, left_index=True, right_index=True, how="left"))
 print(pd.merge(df1, df2, left_index=True, right_index=True, how="right"))
-
-
-
-
-
