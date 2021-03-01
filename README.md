@@ -9,3 +9,5 @@
     - 각 피쳐 및 결과 레이블 간 상관관계
 - iplot 관련 그래프 확인
     - jupyter notebook 으로 옮겨서 확인
+- color selection
+    - https://material.io/design/color/the-color-system.html#tools-for-picking-colors
