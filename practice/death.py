@@ -97,5 +97,6 @@ def generate_dateframe_by_path(path):
     return final_df
 
 final_df = generate_dateframe_by_path(dir_path)
-generate_dateframe_by_path(dir_path)
-print(final_df.head())
+final_df = final_df.astype("int64")
+final_df.to_csv(dir_path + "/result/deaths_df.csv")
+
