@@ -1,2 +1,4 @@
 .idea/**
 **.pyc
+jupyter/.ipynb_checkpoints/**
+documents/**
