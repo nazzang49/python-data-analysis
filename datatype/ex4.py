@@ -10,6 +10,3 @@ print(date_range)
 random_list = np.random.rand(15)
 df = pd.DataFrame(random_list.tolist(), columns=['random_value'], index=date_range)
 print(df)
-
-
-
